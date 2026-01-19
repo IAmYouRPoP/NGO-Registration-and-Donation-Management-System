@@ -1,0 +1,184 @@
+.dashboard {
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Top section layout */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Profile Card */
+.profile-card {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 320px;
+}
+
+.profile-card p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* Slogan box */
+.slogan-box {
+  flex: 1;
+  text-align: center;
+  padding: 30px 25px;
+  background: #fef3c7;
+  border-left: 6px solid #dc2626;
+  border-radius: 10px;
+  margin-top: -20px;
+}
+
+.slogan-box h2 {
+  font-size: 26px;
+  color: #b91c1c;
+  margin-bottom: 10px;
+}
+
+.slogan-box p {
+  font-size: 18px;
+  color: #374151;
+}
+
+/* Total Amount Card */
+.total-card {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  min-width: 260px;
+}
+
+.total-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.total-card h2 {
+  font-size: 36px;
+  color: #16a34a;
+}
+
+/* Donate Button */
+.donate-btn {
+  background: #dc2626;
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.donate-btn:hover {
+  background: #b91c1c;
+}
+
+/* Table Styling */
+.table-container {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  text-align: center;
+}
+
+.table-container th,
+.table-container td {
+  padding: 14px 12px;
+  background: #ffffff;
+}
+
+.table-container th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+}
+
+/* Transaction ID styling */
+.table-container td:first-child {
+  font-family: monospace;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Status colors */
+.status {
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: inline-block;
+  min-width: 90px;
+  margin: 4px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.status.success {
+  color: #ffffff;
+  background-color: #15803d;
+}
+
+.status.failed {
+  color: #ffffff;
+  background-color: #b91c1c;
+}
+
+.status.pending {
+  color: #1f2937;
+  background-color: #f59e0b;
+}
+
+/* Loading Screen */
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8fafc;
+}
+
+.loading-box {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #dc2626;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Logout Button */
+.logout-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: #374151;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background: #111827;
+}

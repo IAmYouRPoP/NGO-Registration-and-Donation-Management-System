@@ -1,0 +1,81 @@
+.donate-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fee2e2, #fef3c7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.donate-card {
+  background: white;
+  padding: 45px 50px;
+  border-radius: 14px;
+  width: 450px;           /* Bigger width */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+select,
+input {
+  width: 100%;
+  padding: 12px 14px;    /* Taller fields */
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+
+
+.donate-title {
+  text-align: center;
+  color: #dc2626;
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  border-color: #dc2626;
+}
+
+.donate-page button {
+  width: 100%;
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.donate-page button:hover {
+  background: #b91c1c;
+}
+
+
+.donate-msg {
+  margin-top: 15px;
+  text-align: center;
+  color: #b91c1c;
+  font-weight: bold;
+}

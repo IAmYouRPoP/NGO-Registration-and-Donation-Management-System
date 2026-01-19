@@ -1,0 +1,137 @@
+.admin {
+  padding: 40px 50px;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: Arial;
+  position: relative;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+  position: fixed;
+  top: 25px;
+  right: 40px;
+  background: #1f2937;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+/* TITLE */
+.admin h2 {
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+/* CAMPAIGN TABS */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 999px;
+  border: none;
+  background: #f1f5f9;
+  color: #1f2937;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tabs .active {
+  background: #dc2626;
+  color: white;
+}
+
+/* SUMMARY ROW */
+.summary {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card {
+  background: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.card.success { border-left: 6px solid #15803d; }
+.card.pending { border-left: 6px solid #f59e0b; }
+.card.failed  { border-left: 6px solid #b91c1c; }
+
+/* SHOW ALL STATUS */
+.reset-btn {
+  margin: 12px 0 24px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #1f2937;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* EMPTY TEXT */
+.admin p {
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+/* TABLE */
+.table-box {
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.1);
+  margin-top: 12px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+th {
+  background: #f1f5f9;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+/* STATUS BADGES */
+.status {
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.status.success { background: #15803d; }
+.status.pending { background: #f59e0b; color: #1f2937; }
+.status.failed  { background: #b91c1c; }
