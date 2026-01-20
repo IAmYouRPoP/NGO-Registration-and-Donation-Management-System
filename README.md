@@ -50,7 +50,7 @@ The system is integrated with Stripe's test environment to simulate secure trans
 ### 1. Clone the Project
 
 ```bash
-git clone [https://github.com/IAmYourPoP/NGO-Registration-and-Donation-Management-System.git](https://github.com/IAmYourPoP/NGO-Registration-and-Donation-Management-System.git)
+git clone https://github.com/IAmYourPoP/NGO-Registration-and-Donation-Management-System.git
 cd NGO-Registration-and-Donation-Management-System
 ```
 
@@ -107,7 +107,7 @@ To ensure data integrity, the backend includes a `setInterval` task that runs ev
 
 ---
 
-## 🧪 Testing and Demo
+## Testing and Demo
 
 ### Stripe Sandbox Details
 To test the payment flow, use Stripe's standard test card:
@@ -122,7 +122,7 @@ Log in with an account that has `role: "admin"` in MongoDB to view the **Registr
 
 ---
 
-## 📁 Detailed Project Structure
+## Detailed Project Structure
 ```plaintext
 ├── backend/
 │   ├── models/        # Mongoose schemas for Users and Donations
