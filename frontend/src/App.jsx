@@ -15,8 +15,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/donate" element={<Donate />} />
-        <Route path="/payment-success" element={<PaymentSuccess />} />
-<Route path="/payment-failed" element={<PaymentFailed />} />
+        <Route path="/donation-success" element={<PaymentSuccess />} />
+<Route path="/donation-failed" element={<PaymentFailed />} />
       </Routes>
     </Router>
   );

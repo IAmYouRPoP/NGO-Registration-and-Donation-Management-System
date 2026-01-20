@@ -26,7 +26,9 @@ router.post('/register', async (req, res) => {
     
     await newUser.save(); // Bcrypt hashing still happens automatically in User.js
 
-    res.status(201).json({ message: "Secure registration successful!" });
+    res.status(201).json({
+      success: true, 
+      message: "Secure registration successful!" });
   } catch (err) {
     console.error("Detailed Registration Error:", err); 
     
@@ -68,6 +70,7 @@ router.post('/login', async (req, res) => {
 
     // 4. Send the token and user info to the frontend
     res.status(200).json({
+      success: true,
       message: "Login successful",
       token, 
       user: { name: user.name, role: user.role }
@@ -77,4 +80,47 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ error: "Server Error" });
   }
 });
+
+// Middleware to verify JWT token
+const protect = (req, res, next) => {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ error: "No token, authorization denied" });
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    res.status(401).json({ error: "Token is not valid" });
+  }
+};
+
+// GET: http://localhost:5000/api/user/profile
+router.get('/user/profile', protect, async (req, res) => {
+  try {
+    // Find the user by ID but don't send the password back to the frontend
+    const user = await User.findById(req.user.userId).select('-password');
+    if (!user) return res.status(404).json({ error: "User not found" });
+    
+    res.json(user);
+  } catch (err) {
+    console.error("Profile Error:", err);
+    res.status(500).json({ error: "Server Error" });
+  }
+});
+
+
+router.get('/admin/users', protect, async (req, res) => {
+  try {
+    if (req.user.role !== 'admin') return res.status(403).json({ error: "Access denied." });
+    
+    // Fetch all users except their passwords
+    const users = await User.find().select('-password').sort({ createdAt: -1 });
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(500).json({ error: "Server Error" });
+  }
+});
+
+
 module.exports = router;

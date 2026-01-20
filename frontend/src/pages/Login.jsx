@@ -7,7 +7,7 @@ function Login() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
+  const [phone, setMobile] = useState("");
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
@@ -32,7 +32,8 @@ function Login() {
       }
 
       localStorage.setItem("token", data.token);
-      window.location.href = data.role === "ADMIN" ? "/admin" : "/dashboard";
+      const userRole = data.user?.role?.toLowerCase(); 
+      window.location.href = userRole === "admin" ? "/admin" : "/dashboard";
 
     } catch (err) {
       setError("Server error. Please try again.");
@@ -44,12 +45,12 @@ function Login() {
   const handleRegister = async () => {
     setError("");
 
-    if (!name || !email || !mobile || !password) {
+    if (!name || !email || !phone || !password) {
       setError("Name, email, mobile number and password are required.");
       return;
     }
 
-    if (mobile.length !== 10) {
+    if (phone.length !== 10) {
       setError("Mobile number must be 10 digits.");
       return;
     }
@@ -60,9 +61,9 @@ function Login() {
       const data = await register({ 
         name, 
         email, 
-        mobile, 
+        phone, 
         password, 
-        role: "USER" 
+        role: "user" 
       });
 
       if (!data.success) {
@@ -135,7 +136,7 @@ function Login() {
           <label>Mobile Number</label>
           <input
             type="tel"
-            value={mobile}
+            value={phone}
             onChange={(e) => setMobile(e.target.value.replace(/\D/g, ""))}
             placeholder="10-digit mobile number"
           />
