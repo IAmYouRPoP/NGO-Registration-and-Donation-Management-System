@@ -28,7 +28,23 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application built to separa
 * **Stripe Developer Account**: Required for API Test Mode keys.
 
 ---
+## 🌐 External Services Setup
 
+### 1. MongoDB Atlas (Database Sandbox)
+The application requires a MongoDB Atlas cluster to store user profiles and donation records.
+1. **Create Cluster**: Sign up at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and deploy a free shared cluster.
+2. **Network Access**: In the Atlas dashboard, navigate to **Network Access** and click **Add IP Address**. For evaluation purposes, select **Allow Access From Anywhere** (0.0.0.0/0).
+3. **Database User**: Under **Database Access**, create a user with `Read and write to any database` privileges.
+4. **Connection String**: Click **Connect** > **Drivers** and copy your `SRV` connection string. Replace the password placeholder with your actual database user password and use this as your `MONGO_URI` in the `.env` file.
+
+### 2. Stripe (Payment Sandbox)
+The system is integrated with Stripe's test environment to simulate secure transactions.
+1. **Developer Account**: Sign up at [Stripe.com](https://stripe.com) and ensure the dashboard is in **Test Mode**.
+2. **API Keys**: Go to **Developers > API Keys**.
+3. **Secret Key**: Copy your `sk_test_...` key. This must be added to your backend `.env` file as `STRIPE_SECRET_KEY`.
+4. **Public Key**: Copy your `pk_test_...` key. If your frontend uses a publishable key, add this to your environment configuration.
+5. **Verification**: After a successful test donation, you can verify the transaction status and metadata (like Campaign Name) in the **Stripe Dashboard > Payments** section.
+---
 ##  Installation & Setup
 
 ### 1. Clone the Project
