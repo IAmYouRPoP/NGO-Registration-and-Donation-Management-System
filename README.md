@@ -28,7 +28,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application built to separa
 * **Stripe Developer Account**: Required for API Test Mode keys.
 
 ---
-## 🌐 External Services Setup
+##  External Services Setup
 
 ### 1. MongoDB Atlas (Database Sandbox)
 The application requires a MongoDB Atlas cluster to store user profiles and donation records.
